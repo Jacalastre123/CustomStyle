@@ -1,11 +1,11 @@
 let allElements = document.querySelectorAll("*") // get all elements
-let top = 0 // let
+let top = 0 // let variable =
 let left = 0
 let enetop = 0
-let eneleft = 0
+let eneleft = 0 
 const player = document.querySelector("player")
 const player-arrow = document.querySelector("player-arrow")
-const enemy = document.querySelector("enemy")
+const enemy = document.querySelector("enemy") // Get your elements
 allElements.forEach(value => {
  if (value.tagName.toLowerCase().startsWith("player") ) { // if it has the name
    value.style.backgroundColor = "blue" // CSS styling
