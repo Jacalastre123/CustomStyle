@@ -16,7 +16,7 @@ allElements2.forEach(value => {
    value.style.height = "50px"
    value.style.width = "50px"
     
-   value.style.top = "0px"
+  value.style.top = "0px"
   value.style.left = "0px"
 
 
