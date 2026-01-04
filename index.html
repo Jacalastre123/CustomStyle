@@ -54,7 +54,7 @@ textarea {
             <p id="codeable"></p>
     <br>
         <button id="linker">Open Link</button>
-        <button onclick="navigator.clipboard = linkShow.textContent">Copy</button>
+        <button onclick="navigator.clipboardwriteText(linkShow.textContent)">Copy</button>
         <button onclick="dial.close()">Close</button>
     </dialog>
     
