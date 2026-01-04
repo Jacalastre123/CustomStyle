@@ -39,7 +39,7 @@ value.style.width = "100px"
   y: 80,
   x: 40,
   el: value,
- }
+ })
 }
 
  }
