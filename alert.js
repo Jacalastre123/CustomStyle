@@ -1,6 +1,7 @@
 let allElements = document.querySelectorAll("*")
 let dial;
 let splits;
+let varia = new Map()
 allElements.forEach(value => {
 if (value.tagName.toLowerCase().startsWith("alert")) {
   if (value.tagName.toLowerCase() === "alert-dialog") {
