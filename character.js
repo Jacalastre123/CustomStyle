@@ -5,6 +5,7 @@ let enetop = 0
 let eneleft = 0 
 let arrtop = 0
 let arrleft = 0
+let enemies = false
 const player = document.querySelector("player")
 const playerArrow = document.querySelector("player-arrow")
 const enemy = document.querySelector("enemy") // Get your elements
@@ -20,17 +21,7 @@ allElements2.forEach(value => {
 
 
 if (value.tagName.toLowerCase() === "enemy") { // If enemy
-
-setInterval(function() {
-if (player.style.left > value.style.left) eneleft++;
-if (player.style.left < value.style.left) eneleft--; // The Chase
-if (player.style.top < value.style.top) enetop--;
-if (player.style.top > value.style.top) enetop++;
-
-enemy.style.top = enetop
-enemy.style.left = eneleft // Apply positions
-
-}, 300)
+enemies = true
 
 value.style.backgroundColor = "red"
 value.style.position = "absolute"
@@ -42,43 +33,56 @@ value.style.width = "100px"
 
 
 })
+
+setInterval(function() {
+ document.querySelectorAll("enemy").forEach(enemy => { // Looping each <enemy>
+if (left > eneleft) eneleft++;
+if (left < eneleft) eneleft--; // The Chase
+if (top < enetop) enetop--;
+if (top > enetop) enetop++;
+
+enemy.style.top = enetop
+enemy.style.left = eneleft // Apply positions
+ })
+}, 300)
+
     document.addEventListener("keydown", (event) => {
   if (event.key === "W"|| event.key === "w") {
     top -= 5
-    player.style.top = top // Whole movement system
+    player.style.top = top  + "px" // Whole movement system
   }
   if (event.key === "S" || event.key === "s" ) {
     top += 5
-    player.style.top = top
+    player.style.top = top + "px"
   }
 
   if (event.key === "a" || event.key === "A") {
     left -= 5
-    player.style.left = left
+    player.style.left = left + "px"
   }
 
   if (event.key === "D"|| event.key === "d") {
     left += 5
-    value.style.left = left
+    player.style.left = left + "px"
   }
 
      if (event.key === "ArrowUp" ) {
     arrtop -= 5
-    playerArrow.style.top = arrtop
+    playerArrow.style.top = arrtop + "px"
   }
   if (event.key === "ArrowDown" ) {
     arrtop += 5
-    playerArrow.style.top = arrtop
+    playerArrow.style.top = arrtop + "px"
   }
 
   if (event.key === "ArrowLeft") { // If it is the left arrow 
     arrleft -= 5
-    playerArrow.style.left = arrleft
+    playerArrow.style.left = arrleft + "px"
   }
 
   if (event.key === "ArrowRight") {
     arrleft += 5
-    playerArrow.style.left = arrleft
+    playerArrow.style.left = arrleft + "px"
   }
 
   
