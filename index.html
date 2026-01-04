@@ -11,7 +11,11 @@
     <style>
  body {
      font-family: Arimo;
-    
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: rgb(20, 150, 210)
+     
      
  }
 
@@ -21,6 +25,14 @@ card {
     
 
 }
+
+#container {
+    background-color: rgba(200,200,200,0.5)
+        width: 90vw;
+    height: 75vh;
+    border-radius: 5px;
+}
+        
     </style>
 </head>
 <body>
@@ -38,6 +50,7 @@ card {
         <br>
             <pre id="codeable"></pre>
     <br>
+        <button id="linker">Open Link</button>
         <button onclick="navigator.clipboard = linkShow.textContent">Copy</button>
         <button onclick="dial.close()">Close</button>
     </dialog>
@@ -46,6 +59,7 @@ card {
        const dial = document.getElementById("dial")
         const linkShow = dial.querySelector("#linkShow")
         const codeable = dial.querySelector("#codeable")
+        const linker = dial.querySelector("#linker")
         
     function funct(button) {
         const head3 = button.querySelector("h3")
@@ -53,6 +67,10 @@ card {
             dial.showModal()
             linkShow.value = `<script href='https://jacalastre123.github.io/CustomStyle/RoundedBox.js'>`
             codeable.innerHTML = "To use rounded boxes like a div, <box-color></box-color>, to add more padding, put <box-color-high></box-color-high>. Paste the script in the bottom of the <body>."
+            linker.onclick = function() {
+                window.open("https://jacalastre123.github.io/CustomStyle/RoundedBox.js")
+                
+            }
         }
     }
 
