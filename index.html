@@ -14,11 +14,31 @@
 
 <div id="container">
 <card onclick="funct(this)" id="roundCor">
-        <h3>Rounded Corners</h3>
+        <h3>Rounded Boxes</h3>
     </card>
 </div>
+    <dialog id="dial">
+        <h3>Your Link:</h3>
+        <textarea readonly id="linkShow"></textarea>
+        <examples>
+            <span id="codeable"></span>
+        </examples>
+        <button onclick="navigator.clipboard = linkShow.textContent">Copy</button>
+        <button onclick="dial.close()">Close</button>
+    </dialog>
     <script>
-   
+       const dial = document.getElementById("dial")
+        const linkShow = dial.querySelector("#linkShow")
+        const codeable = dial.querySelector("#codeable")
+
+    function funct(button) {
+        const head3 = button.querySelector("h3")
+        if (head3.innerText === "Rounded Boxes") {
+            dial.showModal()
+            linkShow.value = "https://jacalastre123.github.io/CustomStyle/RoundedBox.css"
+            codeable.innerHTML = roundBoxList.join("<br>")
+        }
+    }
 
     </script>
 </body>
