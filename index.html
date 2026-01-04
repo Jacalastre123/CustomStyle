@@ -24,7 +24,7 @@ card {
     background-color: rgba(200,200,200,0.3);
     display: block;
     margin: 5px;
-
+    cursor: pointer;
 }
 
 #container {
@@ -42,6 +42,11 @@ textarea {
     float: right;
     padding: 4.5px;
 }
+
+    example {
+   float: right;
+   display: block;
+ }
     </style>
 </head>
 <body>
@@ -51,7 +56,7 @@ textarea {
 <div id="container">
 <card onclick="funct(this)" id="roundCor">
         <h3>Rounded Boxes</h3>
-    <div class="roundBox"><h4>box-lime</h4></div>
+    <example class="roundBox"><h4>box-lime</h4></example>
     </card>
 </div>
     <dialog id="dial">
