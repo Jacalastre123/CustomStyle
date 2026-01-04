@@ -2,7 +2,7 @@ let allElements = document.querySelectorAll("*")
 
 allElements.forEach(value => {
   if (value.tagName.toLowerCase().startsWith("box-")) {
-    let splits = value.tagName.split("-")
+    let splits = value.tagName.toLowerCase().split("-")
     value.style.backgroundColor = splits[1]
     value.style.padding = "5px"
     value.style.borderRadius = "4.5px"
