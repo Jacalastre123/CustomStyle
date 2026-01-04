@@ -35,9 +35,9 @@ card {
     <dialog id="dial">
         <h3>Your Link:</h3>
         <textarea readonly id="linkShow"></textarea>
-        
-            <span id="codeable"></span>
-    
+        <br>
+            <pre id="codeable"></pre>
+    <br>
         <button onclick="navigator.clipboard = linkShow.textContent">Copy</button>
         <button onclick="dial.close()">Close</button>
     </dialog>
