@@ -24,12 +24,13 @@ allElements2.forEach(value => {
 if (value.tagName.toLowerCase() === "enemy") { // If enemy
 enemies = true
 
-value.style.backgroundColor = "red"
-value.style.position = "absolute"
-value.style.height = "100px" // Enemy's styling
-value.style.width = "100px"
-    value.style.top = "40px"
-  value.style.left = "80px"
+enemy.style.backgroundColor = "red"
+
+enemy.style.position = "absolute"
+enemy.style.height = "100px" // Enemy's styling
+enemy.style.width = "100px"
+    enemy.style.top = "40px"
+  enemy.style.left = "80px"
 }
 
  }
