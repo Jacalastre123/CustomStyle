@@ -11,16 +11,16 @@
     <style>
  body {
      font-family: Arimo;
-    display: flex;
+    display: grid;
      justify-content: center;
-     align-items: center;
+    
      background-color: rgb(20, 150, 210);
      
      
  }
 
 card {
-    border: 1px solid grey;
+    border: 2px solid grey;
     background-color: green;
     
 
@@ -50,7 +50,7 @@ textarea {
         <h3>Your Link:</h3>
         <textarea readonly id="linkShow"></textarea>
         <br>
-            <pre id="codeable"></pre>
+            <p id="codeable"></p>
     <br>
         <button id="linker">Open Link</button>
         <button onclick="navigator.clipboard = linkShow.textContent">Copy</button>
