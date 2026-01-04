@@ -19,7 +19,7 @@ if (value.tagName.toLowerCase().startsWith("confirm-")) {
     varia.set(splits[1], false)
     if (splits[2] === "dialog") {
      dial = document.createElement("dialog")
-      dial.innerHTML = ${value.innerText} + "<br><br><button onclick='truify()' >True</button><button onclick='falsify()'>False</button><button onclick='closure()'>Close</button>`
+      dial.innerHTML = `${value.innerText} + "<br><br><button onclick='truify()' >True</button><button onclick='falsify()'>False</button><button onclick='closure()'>Close</button>`
       document.body.appendChild(dial)
       dial.showModal()
     }
