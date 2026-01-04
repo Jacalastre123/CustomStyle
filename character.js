@@ -6,6 +6,7 @@ let eneleft = 80
 let arrtop = 0
 let arrleft = 0
 let enemies = false
+let eneData = []
 const player = document.querySelector("player")
 const playerArrow = document.querySelector("player-arrow")
 const enemy = document.querySelector("enemy") // Get your elements
@@ -18,11 +19,13 @@ allElements2.forEach(value => {
     
   value.style.top = "0px"
   value.style.left = "0px"
-
+ }
+ 
 
 
 if (value.tagName.toLowerCase() === "enemy") { // If enemy
 enemies = true
+
 
 value.style.backgroundColor = "red"
 
@@ -32,6 +35,11 @@ value.style.width = "100px"
     value.style.top = "40px"
  value.style.display = "block"
   value.style.left = "80px"
+  eneData.push({
+  y: 80,
+  x: 40,
+  el: value,
+ }
 }
 
  }
@@ -40,16 +48,16 @@ value.style.width = "100px"
 })
 
 setInterval(function() {
- document.querySelectorAll("enemy").forEach(enemy => { // Looping each <enemy>
-if (left > eneleft) eneleft++;
-if (left < eneleft) eneleft--; // The Chase
-if (top < enetop ) enetop--;
-if (top > enetop) enetop++;
+ eneData.forEach(enemy => { // Looping each <enemy>
+if (left > enemy.x) enemy.x++;
+if (left < enemy.x) enemy.z--; // The Chase
+if (top < enemy.y) enemy.y--;
+if (top > enemy.y) enemy.y++;
 
 
 
-enemy.style.top = enetop + "px"
-enemy.style.left = eneleft + "px"// Apply positions
+enemy.el.style.top = enemy.y + "px"
+enemy.el.style.left = enemy.x + "px"// Apply positions
  })
 }, 38)
 
