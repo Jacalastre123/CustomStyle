@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <style>
-      
+ body {
+     font-family: Arimo;
+     display: flex;
+     justify-contents: center;
+     align-items: center;
+     
+ }
+
+card {
+    border: 1px solid grey;
+    background-color: green;
+    
+
+}
     </style>
 </head>
 <body>
@@ -26,17 +43,18 @@
         <button onclick="navigator.clipboard = linkShow.textContent">Copy</button>
         <button onclick="dial.close()">Close</button>
     </dialog>
+    
     <script>
        const dial = document.getElementById("dial")
         const linkShow = dial.querySelector("#linkShow")
         const codeable = dial.querySelector("#codeable")
-
+        
     function funct(button) {
         const head3 = button.querySelector("h3")
         if (head3.innerText === "Rounded Boxes") {
             dial.showModal()
-            linkShow.value = "https://jacalastre123.github.io/CustomStyle/RoundedBox.css"
-            codeable.innerHTML = roundBoxList.join("<br>")
+            linkShow.value = `<script href='https://jacalastre123.github.io/RoundedBox.js'>`
+            codeable.innerHTML = "To use rounded boxes like a div, <box-color></box-color>, to add padding, put <box-color-high>,/box-color-high>
         }
     }
 
