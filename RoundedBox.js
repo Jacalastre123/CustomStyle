@@ -2,7 +2,7 @@ let allElements = document.querySelectorAll("*")
 
 allElements.forEach(value => {
   if (value.tagName.toLowerCase().startsWith("box-")) {
-    let splits = value.split("-")
+    let splits = value.tagName.split("-")
     value.style.backgroundColor = splits[1]
     if (splits[2] === "high") {
       value.style.padding = "15px"
@@ -11,5 +11,5 @@ allElements.forEach(value => {
   }
       
 })
-  
+console.log("Welcome! Go to https://jacalastre123.github.io/customStyle!")
   
