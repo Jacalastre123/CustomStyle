@@ -41,7 +41,7 @@ value.style.width = "100px"
  }
 
 
-}
+})
     document.addEventListener("keydown", (event) => {
   if (event.key === "W"|| event.key === "w") {
     top -= 5
