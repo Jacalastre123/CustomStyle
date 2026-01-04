@@ -47,7 +47,7 @@ if (top > enetop) enetop++;
 enemy.style.top = enetop + "px"
 enemy.style.left = eneleft + "px"// Apply positions
  })
-}, 300)
+}, 60)
 
     document.addEventListener("keydown", (event) => {
   if (event.key === "W"|| event.key === "w") {
