@@ -1,8 +1,8 @@
 let allElements2 = document.querySelectorAll("*") // get all elements
 let top = 0 // let variable =
 let left = 0
-let enetop = 0
-let eneleft = 0 
+let enetop = 40
+let eneleft = 80
 let arrtop = 0
 let arrleft = 0
 let enemies = false
@@ -13,11 +13,11 @@ allElements2.forEach(value => {
  if (value.tagName.toLowerCase().startsWith("player") ) { // if it has the name
    value.style.backgroundColor = "blue" // CSS styling
    value.style.position = "absolute" // element.style....
-   value.style.height = "100px"
-   value.style.width = "100px"
+   value.style.height = "50px"
+   value.style.width = "50px"
     value.style.transition = "top 0.2s, left 0.2s" // Animate
-   value.style.top = 0
-  value.style.left = 0
+   value.style.top = "0px"
+  value.style.left = "0px"
 
 
 
@@ -28,8 +28,8 @@ value.style.backgroundColor = "red"
 value.style.position = "absolute"
 value.style.height = "100px" // Enemy's styling
 value.style.width = "100px"
-    value.style.top = 0
-  value.style.left = 0
+    value.style.top = "40px"
+  value.style.left = "80px"
 }
 
  }
@@ -44,8 +44,8 @@ if (left < eneleft) eneleft--; // The Chase
 if (top < enetop) enetop--;
 if (top > enetop) enetop++;
 
-enemy.style.top = enetop
-enemy.style.left = eneleft // Apply positions
+enemy.style.top = enetop + "px"
+enemy.style.left = eneleft + "px"// Apply positions
  })
 }, 300)
 
