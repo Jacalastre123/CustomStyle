@@ -10,7 +10,7 @@ if (value.tagName.toLowerCase().startsWith("alert")) {
   }
 
   else {
-    window.alert(dvalue.innerText)
+    window.alert(value.innerText)
   }
 }
 if (value.tagName.toLowerCase().startsWith("confirm-")) {
