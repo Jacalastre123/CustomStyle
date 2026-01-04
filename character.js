@@ -42,10 +42,10 @@ value.style.width = "100px"
  })
 }
 
- }
+ })
 
 
-})
+
 
 setInterval(function() {
  eneData.forEach(enemy => { // Looping each <enemy>
