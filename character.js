@@ -3,8 +3,8 @@ let top = 0 // let variable =
 let left = 0
 let enetop = 0
 let eneleft = 0 
-arrtop = 0
-arrleft = 0
+let arrtop = 0
+let arrleft = 0
 const player = document.querySelector("player")
 const playerArrow = document.querySelector("player-arrow")
 const enemy = document.querySelector("enemy") // Get your elements
