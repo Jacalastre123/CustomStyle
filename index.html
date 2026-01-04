@@ -40,7 +40,7 @@ textarea {
 </head>
 <body>
 <h1>Custom Styler</h1>
-<h4>The way to get predefined custom styles and related tutorials!</h4>
+<h4>The way to get predefined custom styles and the code!</h4>
 
 <div id="container">
 <card onclick="funct(this)" id="roundCor">
@@ -54,7 +54,7 @@ textarea {
             <p id="codeable"></p>
     <br>
         <button id="linker">Open Link</button>
-        <button onclick="navigator.clipboardwriteText(linkShow.textContent)">Copy</button>
+        <button onclick="navigator.clipboard.writeText(linkShow.textContent)">Copy</button>
         <button onclick="dial.close()">Close</button>
     </dialog>
     
