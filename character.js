@@ -15,7 +15,7 @@ allElements2.forEach(value => {
    value.style.position = "absolute" // element.style....
    value.style.height = "50px"
    value.style.width = "50px"
-    value.style.transition = "top 0.2s, left 0.2s" // Animate
+    
    value.style.top = "0px"
   value.style.left = "0px"
 
