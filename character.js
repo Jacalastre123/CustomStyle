@@ -3,8 +3,10 @@ let top = 0 // let variable =
 let left = 0
 let enetop = 0
 let eneleft = 0 
+arrtop = 0
+arrleft = 0
 const player = document.querySelector("player")
-const player-arrow = document.querySelector("player-arrow")
+const playerArrow = document.querySelector("player-arrow")
 const enemy = document.querySelector("enemy") // Get your elements
 allElements.forEach(value => {
  if (value.tagName.toLowerCase().startsWith("player") ) { // if it has the name
@@ -15,55 +17,15 @@ allElements.forEach(value => {
     value.style.transition = "top 0.3s, left 0.3s" // Animate
 
 
-   document.addEventListener("keydown", (event) => {
-  if (event.key === "W" && value.tagName.toLowerCase() === "player"|| event.key === "w" && value.tagName.toLowerCase() === "player") {
-    top -= 5
-    player.style.top = top // Whole movement system
-  }
-  if (event.key === "S" && value.tagName.toLowerCase() === "player"|| event.key === "s" && value.tagName.toLowerCase() === "player") {
-    top += 5
-    player.style.top = top
-  }
 
-  if (event.key === "a" && value.tagName.toLowerCase() === "player"|| event.key === "A" && value.tagName.toLowerCase() === "player") {
-    left -= 5
-    player.style.left = left
-  }
-
-  if (event.key === "D" && value.tagName.toLowerCase() === "player"|| event.key === "d" && value.tagName.toLowerCase() === "player") {
-    left += 5
-    value.style.left = left
-  }
-
-     if (event.key === "ArrowUp" && value.tagName.toLowerCase() === "player-arrow") {
-    top -= 5
-    player.style.top = top
-  }
-  if (event.key === "ArrowDown" && value.tagName.toLowerCase() === "player-arrow") {
-    top += 5
-    player.style.top = top
-  }
-
-  if (event.key === "ArrowLeft" && value.tagName.toLowerCase() === "player-arrow") { //If it is the left arrow and the tag is player-arrow
-    left -= 5
-    player.style.left = left
-  }
-
-  if (event.key === "ArrowRight" && value.tagName.toLowerCase() === "player-arrow") {
-    left += 5
-    player.style.left = left
-  }
-
-  
-}
 
 if (value.tagName.toLowerCase() === "enemy") { // If enemy
 
 setInterval(function() {
-if (player.left > value.left) eneleft++;
-if (player.left < value.left) eneleft--; // The Chase
-if (player.top < value.top) enetop--;
-if (player.top > value.top) enetop++;
+if (player.style.left > value.style.left) eneleft++;
+if (player.style.left < value.style.left) eneleft--; // The Chase
+if (player.style.top < value.style.top) enetop--;
+if (player.style.top > value.style.top) enetop++;
 
 enemy.style.top = enetop
 enemy.style.left = eneleft // Apply positions
@@ -80,6 +42,47 @@ value.style.width = "100px"
 
 
 }
+    document.addEventListener("keydown", (event) => {
+  if (event.key === "W"|| event.key === "w") {
+    top -= 5
+    player.style.top = top // Whole movement system
+  }
+  if (event.key === "S" || event.key === "s" ) {
+    top += 5
+    player.style.top = top
+  }
+
+  if (event.key === "a" || event.key === "A") {
+    left -= 5
+    player.style.left = left
+  }
+
+  if (event.key === "D"|| event.key === "d") {
+    left += 5
+    value.style.left = left
+  }
+
+     if (event.key === "ArrowUp" ) {
+    arrtop -= 5
+    playerArrow.style.top = arrtop
+  }
+  if (event.key === "ArrowDown" ) {
+    arrtop += 5
+    playerArrow.style.top = arrtop
+  }
+
+  if (event.key === "ArrowLeft") { // If it is the left arrow 
+    arrleft -= 5
+    playerArrow.style.left = arrleft
+  }
+
+  if (event.key === "ArrowRight") {
+    arrleft += 5
+    playerArrow.style.left = arrleft
+  }
+
+  
+})
                      // Copy this for any changes
                    
 
