@@ -35,9 +35,9 @@ card {
     <dialog id="dial">
         <h3>Your Link:</h3>
         <textarea readonly id="linkShow"></textarea>
-        <examples>
+        
             <span id="codeable"></span>
-        </examples>
+    
         <button onclick="navigator.clipboard = linkShow.textContent">Copy</button>
         <button onclick="dial.close()">Close</button>
     </dialog>
@@ -52,7 +52,7 @@ card {
         if (head3.innerText === "Rounded Boxes") {
             dial.showModal()
             linkShow.value = `<script href='https://jacalastre123.github.io/RoundedBox.js'>`
-            codeable.innerHTML = "To use rounded boxes like a div, <box-color></box-color>, to add padding, put <box-color-high>,/box-color-high>"
+            codeable.innerHTML = "To use rounded boxes like a div, <box-color></box-color>, to add padding, put <box-color-high>,</box-color-high>"
         }
     }
 
