@@ -40,10 +40,10 @@ enemy.style.width = "100px"
 
 setInterval(function() {
  document.querySelectorAll("enemy").forEach(enemy => { // Looping each <enemy>
-if (left > eneleft) eneleft++;
-if (left < eneleft) eneleft--; // The Chase
-if (top < enetop) enetop--;
-if (top > enetop) enetop++;
+if (left > eneleft || arrleft > eneleft ) eneleft++;
+if (left < eneleft || arrleft > eneleft ) eneleft--; // The Chase
+if (top < enetop || arrtop > eneleft ) enetop--;
+if (top > enetop || arrtop > eneleft ) enetop++;
 
 enemy.style.top = enetop + "px"
 enemy.style.left = eneleft + "px"// Apply positions
