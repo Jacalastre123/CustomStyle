@@ -30,6 +30,7 @@ value.style.position = "absolute"
 value.style.height = "100px" // Enemy's styling
 value.style.width = "100px"
     value.style.top = "40px"
+ value.display = "block"
   value.style.left = "80px"
 }
 
