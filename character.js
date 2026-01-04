@@ -15,8 +15,9 @@ allElements2.forEach(value => {
    value.style.position = "absolute" // element.style....
    value.style.height = "100px"
    value.style.width = "100px"
-    value.style.transition = "top 0.3s, left 0.3s" // Animate
-
+    value.style.transition = "top 0.2s, left 0.2s" // Animate
+   value.style.top = 0
+  value.style.left = 0
 
 
 
@@ -27,6 +28,8 @@ value.style.backgroundColor = "red"
 value.style.position = "absolute"
 value.style.height = "100px" // Enemy's styling
 value.style.width = "100px"
+    value.style.top = 0
+  value.style.left = 0
 }
 
  }
