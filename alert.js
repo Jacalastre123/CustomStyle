@@ -2,6 +2,19 @@ let allElements = document.querySelectorAll("*")
 let dial;
 let splits;
 let varia = new Map()
+
+    function truify() {
+    varia.set(splits[1], true)
+  }
+
+  function falsify() {
+    varia.set(splits[1], false)
+  }
+
+ function closure() {
+    dial.close()
+  }
+
 allElements.forEach(value => {
 if (value.tagName.toLowerCase().startsWith("alert")) {
   if (value.tagName.toLowerCase() === "alert-dialog") {
@@ -15,6 +28,8 @@ if (value.tagName.toLowerCase().startsWith("alert")) {
     window.alert(value.innerText)
   }
 }
+
+
 if (value.tagName.toLowerCase().startsWith("confirm-")) {
     
     splits = value.tagName.toLowerCase().split("-")
@@ -37,15 +52,4 @@ if (value.tagName.toLowerCase().startsWith("confirm-")) {
       
 })
 
-  function truify() {
-    varia.set(splits[1], true)
-  }
-
-  function falsify() {
-    varia.set(splits[1], false)
-  }
-
- function closure() {
-    dial.close()
-  }
 
