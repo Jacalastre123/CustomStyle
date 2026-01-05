@@ -1,31 +1,20 @@
-let allElements = document.querySelectorAll("*")
-let dial;
-let splits;
-let varia = new Map()
+let allElements = document.querySelectorAll("*") // Pick all elements
+let dial; // dialog
+let splits; // Split characters
+let varia = new Map() // Define your variables
 
-    function truify() {
-    varia.set(splits[1], true)
-  }
-
-  function falsify() {
-    varia.set(splits[1], false)
-  }
-
- function closure() {
-    dial.close()
-  }
 
 allElements.forEach(value => {
 if (value.tagName.toLowerCase().startsWith("alert")) {
   if (value.tagName.toLowerCase() === "alert-dialog") {
-    dial = document.createElement("dialog")
-      dial.innerHTML = value.innertext
-    document.body.appendChild(dial)
-      dial.showModal()
+    dial = document.createElement("dialog") // Alert with dialog
+      dial.innerHTML = value.innertext // Text
+    document.body.appendChild(dial) //Append Child
+      dial.showModal() // Show t
   }
 
   else {
-    window.alert(value.innerText)
+    window.alert(value.innerText) // Conventional
   }
 }
 
@@ -35,15 +24,40 @@ if (value.tagName.toLowerCase().startsWith("confirm-")) {
     splits = value.tagName.toLowerCase().split("-")
     varia.set(splits[1], false)
     if (splits[2] === "dialog") {
-     dial = document.createElement("dialog")
-      dial.innerHTML = `${value.innerText}<br><br><button onclick='truify()' style='background-color: lime; width: 48.5%'>True</button><button onclick='falsify()' style='background-color: red; width: 48.5%'>False</button><br><button onclick='closure()' style='width: 98%; background-color: white;'>Close</button>`
+     dial = document.createElement("dialog") 
+      
       document.body.appendChild(dial)
+        const trueBut = document.createElement("button") // True button
+        trueBut.onclick = function() {
+             varia.set(splits[1], true)
+            dial.close()
+        }
+        trueBut.innerHTML = "True"
+        trueBut.style.backgroundColor = "lime"
+        trueBut.style.width = "48%"
+
+        dial.appendChild(trueBut)
+
+
+               const falseBut = document.createElement("button") //False button
+        falseBut.onclick = function() {
+             varia.set(splits[1], true)
+            dial.close() // Close it
+        }
+        falseBut.innerHTML = "False"
+        falseBut.style.backgroundColor = "#FF4F4F" // Background color
+        falseBut.style.width = "48%" // Near half
+
+        dial.appendChild(falseBut)
+
+
+        
       dial.showModal()
-      dial.style.padding = "10px"
-      dial.style.borderRadius = "5px"
+      dial.style.padding = "10px" // Space after text
+      dial.style.borderRadius = "5px" // Roundness of corners
     }
     else {
-      varia.set(splits[1], window.confirm(value.innerText.trim()))
+      varia.set(splits[1], window.confirm(value.innerText.trim())) // Conventional
     }
     
   }
