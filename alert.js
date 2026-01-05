@@ -25,7 +25,7 @@ if (value.tagName.toLowerCase().startsWith("confirm-")) {
       document.body.appendChild(dial)
       dial.showModal()
       dial.style.padding = "10px"
-      dial.style.borderRadius: = "5px"
+      dial.style.borderRadius = "5px"
     }
     else {
       varia.set(splits[1], window.confirm(value.innerText.trim()))
