@@ -57,6 +57,13 @@ textarea {
    
     height: 50%
  }
+
+dialog {
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+        
     </style>
 </head>
 <body>
@@ -76,6 +83,11 @@ textarea {
 
     <card onclick="funct(this)" id="roundCor">
         <h3>Confirms and Alerts (Normal and popup)</h3>
+
+    </card>
+
+    <card onclick="funct(this)" id="roundCor">
+        <h3>Speaking tags</h3>
 
     </card>
 </div>
@@ -124,6 +136,15 @@ textarea {
             codeable.innerText = "This is to simplify javascript alert and confirm with <alert> and <confirm-variableName>, there are also dialog options with <alert-dialog> and <confirm-variableName-dialog>, don't forget about the closing tag!"
             linker.onclick = function() {
                 window.open("https://jacalastre123.github.io/CustomStyle/alert.js")
+                
+            }
+
+              if (head3.innerText === "Speaking tags") {
+            dial.showModal()
+            linkShow.value = "<script type='module' src='https://jacalastre123.github.io/CustomStyle/speak.js'></scrip" + "t>"
+            codeable.innerText = "This tag is an easy way to do text to speech, there are three attributes, data-pitch='string' for pitch (0+), data-vol='string' is for volume 0-1 and data-language='string' for the language, 'en-uk, en-us and more'."
+            linker.onclick = function() {
+                window.open("https://jacalastre123.github.io/CustomStyle/speak.js")
                 
             }
         }
