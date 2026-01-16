@@ -10,7 +10,7 @@ if (value.tagName.toLowerCase().startsWith("alert")) {
     dial = document.createElement("dialog") // Alert with dialog
       dial.innerHTML = value.innertext // Text
     document.body.appendChild(dial) //Append Child
-      dial.showModal() // Show t
+      dial.showModal() // Show the dialog
   }
 
   else {
