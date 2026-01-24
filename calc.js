@@ -1,6 +1,7 @@
 let codes = [
     "#", "---", "|", "-", "##", "___", "*LIST", "*", 
 ]
+console.log("This site is using Jacalastre123;s custom styles, if you want to do the same, go to https://jacalastre123.github.io/CustomStyle/")
 const container = document.getElementById("container")
 let inTable = false
 let inTh = false
