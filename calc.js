@@ -1,7 +1,6 @@
 let codes = [
     "#", "---", "|", "-", "##", "___", "*LIST", "*", 
 ]
-console.log("This site is using Jacalastre123;s custom styles, if you want to do the same, go to https://jacalastre123.github.io/CustomStyle/")
 const container = document.getElementById("container")
 let inTable = false
 let inTh = false
@@ -13,7 +12,7 @@ let tRow2;
 let ul;
 function loader(post) {
     container.innerHTML = ""
-fetch("post + ".wtd")
+fetch(post + ".wtd")
 .then(response => response.text())
 .then(data => {
     const lines = data.split(/\r?\n/)
@@ -106,8 +105,6 @@ fetch("post + ".wtd")
         else if (line.startsWith("pic(")) {
             const imag = document.createElement("img")
                     imag.src = line.slice(4, -1)
-                  
-             
                     container.appendChild(imag)
         } 
          else if (line.trim() !== "" || line.includes("(SM)") || line.includes("(BD)") || line.includes("(COLOR-)")) {
@@ -119,7 +116,7 @@ fetch("post + ".wtd")
 
                     else if (line.includes("(BD)")) {
                         para.innerHTML = "<b>" + args + "</b>"
-                      
+                        
                     }
 
                     else if (cmd === "//") {
@@ -135,6 +132,15 @@ fetch("post + ".wtd")
                         }
                         para.innerText = line
                     }
+
+                      else if (line.startsWith("(CLASS-")) {
+                        let match3 = line.match(/\(CLASS-([^)]+)\)/)
+                        if (match3) {
+                            para.className = match3[1]
+                            line = line.replace(match3[0], "").trim()
+                        }
+                        para.innerText = line
+                    }
                     else {
                          para.innerText = line
                     }
@@ -142,8 +148,9 @@ fetch("post + ".wtd")
                     container.appendChild(para)
                     
         } 
+     
 
-        console.log(cmd)
+
     })
     
 })
