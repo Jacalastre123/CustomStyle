@@ -13,7 +13,7 @@ let tRow2;
 let ul;
 function loader(post) {
     container.innerHTML = ""
-fetch("/post/" + post + ".wtd")
+fetch("post + ".wtd")
 .then(response => response.text())
 .then(data => {
     const lines = data.split(/\r?\n/)
