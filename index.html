@@ -91,6 +91,13 @@ dialog {
         <h3>Speaking tags</h3>
 
     </card>
+
+     <card onclick="funct(this)" id="roundCor">
+        <h3>.wtd Support</h3>
+
+    </card>
+
+   
 </div>
     <dialog id="dial">
         <h3>Your Link:</h3>
@@ -144,6 +151,16 @@ dialog {
             dial.showModal()
             linkShow.value = "<script type='module' src='https://jacalastre123.github.io/CustomStyle/speak.js'></scrip" + "t>"
             codeable.innerText = "This tag is an easy way to do text to speech, there are three attributes, data-pitch='string' for pitch (0+), data-vol='string' is for volume 0-1 and data-language='string' for the language, en-uk, en-us and more."
+            linker.onclick = function() {
+                window.open("https://jacalastre123.github.io/CustomStyle/speak.js")
+                
+            }
+        }
+
+            if (head3.innerText === ".wtd Support") {
+            dial.showModal()
+            linkShow.value = "<script type='module' src='https://jacalastre123.github.io/CustomStyle/calc.js'></scrip" + "t>"
+            codeable.innerText = "This enables you to translate files to a .wtd format which is my own little language, you will need to call the loader('file path or link') function and a div or body called container. "
             linker.onclick = function() {
                 window.open("https://jacalastre123.github.io/CustomStyle/speak.js")
                 
