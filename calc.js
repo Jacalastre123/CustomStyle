@@ -1,64 +1,76 @@
 let codes = [
-    "#", "---", "|", "-", "##", "___", "*LIST", "*", 
+    "#", "---", "|", "-", "##", "___", "*LIST", "*", "<=" // Code list
 ]
-const container = document.getElementById("container")
-let inTable = false
+const container = document.getElementById("container") // Get your container ID
+let inTable = false // Is in table?
 let inTh = false
 let table;
 let tHead;
 let lineArray = []
 let tRow;
 let tRow2;
-let ul;
+let ul; // Bunch of let statements for more universal access to other commands like lists and tables
+let colList = []
 function loader(post) {
     container.innerHTML = ""
-fetch(post + ".wtd")
+fetch(post + ".wtd") // Fetch your post
 .then(response => response.text())
 .then(data => {
-    const lines = data.split(/\r?\n/)
+    const lines = data.split(/\r?\n/) // Splits it by newl ine
 
-    let cmd;
+    let cmd; // Command
 
     lines.forEach(line => {
 
-        const part = line.split(" ")
-         cmd = part[0]
+        const part = line.split(" ") //Split it
+         cmd = part[0] // Command part
       
-        const args = part.slice(1).join(" ")
+        const args = part.slice(1).join(" ") // Rest
         
         if (codes.includes(cmd)) {
-            switch(cmd) {
+            switch(cmd) { // Switch for many ifs
 
-                case "___":
+                case "___": // <hr>
                    
                     container.appendChild(document.createElement("hr"))
                     break;
-
+                
                
-                case "##":
-                    const subheadline = document.createElement("h3")
-                    subheadline.innerText = args
-                    container.appendChild(subheadline)
+                case "##": // <h4>
+                    const subheadline = document.createElement("h3") // Create element
+                    subheadline.innerText = args // Put text
+                    container.appendChild(subheadline) // Put it to container
+                    break; // End case
+
+                 case "<=": // Assign text to ID
+                    let argsSplit1 = args.split(" ")
+                    let argsSplit2 = argsSplit1[0]
+                   
+                    
+                    const id = document.getElementById(argsSplit2)
+                    id.innerText = argsSplit1.slice(1).join(" ")
+
+                    
                     break;
 
-                case "#":
+                case "#": // <h1>
                     const headline = document.createElement("h2")
                     headline.innerText = args
                     container.appendChild(headline)
                     break;
 
-                case "*LIST":
+                case "*LIST": // <ul> only
                     ul = document.createElement("ul")
                     container.appendChild(ul)
                     break;
 
-                case "*":
+                case "*": // <li>
                     const li = document.createElement("li")
                     li.innerText = args
                     ul.appendChild(li)
                     break;
 
-                case "---":
+                case "---": // <table>
                     table = document.createElement("table")
                      tRow = document.createElement("tr")
                     container.appendChild(table)
@@ -67,12 +79,12 @@ fetch(post + ".wtd")
 
                 
 
-                case "|":
+                case "|": // <th> + <tr>
                   let splitter =  args.split(" / ")
                   splitter.forEach(splits => {
                      tHead = document.createElement("th")
                     
-                    tHead.innerHTML = splits
+                    tHead.innerText = splits
                     table.appendChild(tRow)
                     tRow.appendChild(tHead)
                   })
@@ -82,7 +94,7 @@ fetch(post + ".wtd")
 
 
 
-                    case "-":
+                    case "-": // <tr> + <td>
                         tRow2 = document.createElement("tr")
                     table.appendChild(tRow2)
                    let splitter2 =  args.split(" / ")
