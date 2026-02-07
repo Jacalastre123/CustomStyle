@@ -27,6 +27,9 @@ if (value.tagName.toLowerCase().startsWith("confirm-")) {
      dial = document.createElement("dialog") 
       
       document.body.appendChild(dial)
+      const question = document.createElement("h4")
+      question.innerText = value.innerText
+      dial.appendChild(question)
         const trueBut = document.createElement("button") // True button
         trueBut.onclick = function() {
              varia.set(splits[1], true)
@@ -39,7 +42,7 @@ if (value.tagName.toLowerCase().startsWith("confirm-")) {
         dial.appendChild(trueBut)
 
 
-               const falseBut = document.createElement("button") //False button
+               const falseBut = document.createElement("button") // False button
         falseBut.onclick = function() {
              varia.set(splits[1], true)
             dial.close() // Close it
